@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+      <div>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a class="btn btn-outline-success" href="/city/add" role="button" 
+                target="_blank">
+                    新建城市</a>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">名称</th>
+                                <th scope="col">人口</th>
+                                <th scope="col">logo</th>
+                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for title in queryset %}
+                                <tr>
+                                    <th scope="row">{{ title.id}}</th>
+                                    <td>{{ title.name}}</td>
+                                    <td>{{ title.count}}</td>
+                                    <td>
+                                        <img src="/media/{{title.img}}" style="height: 100px;">
+                                    </td>
+                                  </tr>
+                                {% endfor %}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+{% endblock %}

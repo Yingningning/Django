@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css' %}">
+    <style>
+        .container {
+            width: 400px;
+            margin-top: 200px;
+            border: 1px solid rgb(218, 224, 226);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgb(111, 147, 177);
+            /* 水平 垂直 模糊程度 颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 35px;">用户登录</h1>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                {{form.username}}
+                <label for="floatingInput">Username</label>
+                <span>{{form.username.errors.0}}</span>
+            </div>
+            <div class="form-floating mb-3">
+                {{form.pwd}}
+                <label for="floatingPassword">Password</label>
+                <span>{{form.pwd.errors.0}}</span>
+            </div>
+            <div class="form-floating">
+                <div class="row g-0 text-center">
+                    <div class="col-sm-6 col-md-8">
+                        <div class="form-floating mb-3">
+                            {{form.code}}
+                            <label for="floatingPassword">验证码</label>
+                            <span>{{form.code.errors.0}}</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <img src="/img_code" alt="" style="width: 100px;">
+                    </div>
+                  </div>
+            </div>
+            <div style="margin-top: 0px;">
+                <input class="btn btn-primary" type="submit" value="登录">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

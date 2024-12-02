@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block content %}
+      <div>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a class="btn btn-outline-success" href="/admin_add" role="button" 
+                target="_blank">
+                    新建管理员</a>
+            </div>
+
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">用户名</th>
+                                <th scope="col">密码</th>
+                                <th scope="col">操作</th>
+                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for obj in queryset %}
+                                <tr>
+                                    <th scope="row">{{ obj.id}}</th>
+                                    <th scope="row">{{ obj.username}}</th>
+                                    <th scope="row">xxxxxx</th>
+                                    <td>
+                                        <a href="/admin{{ obj.id }}_edit" class="btn btn-primary btn-sm">编辑</a>
+                                        <a href="" class="btn btn-danger btn-sm">删除</a>
+                                        <a href="" class="btn btn-success btn-sm">重置</a>
+                                    </td>
+                                  </tr>
+                                {% endfor %}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  {{page_str|safe}}
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+      </div>
+{% endblock %}

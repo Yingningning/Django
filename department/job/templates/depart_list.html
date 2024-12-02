@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content %}
+      <div>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a class="btn btn-outline-success" href="/depart_add" role="button" 
+                target="_blank">
+                   
+                    新建部门</a>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                批量上传
+              </div>
+              <div class="card-body">
+                <form action="/depart/mutil" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <input type="file" name="file" id="">
+                  <input type="submit" name="" id="" class="btn btn-info" value="上传">
+                </form>
+              </div>
+            </div>
+
+            
+
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">部门名称</th>
+                                <th scope="col">操作</th>
+                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for title in titles %}
+                                <tr>
+                                    <th scope="row">{{ title.id}}</th>
+                                    <td>{{ title.title}}</td>
+                                    <td>
+                                        <a href="/depart{{ title.id }}_edit" class="btn btn-primary btn-sm">编辑</a>
+                                        <a href="/depart_delete?uid={{title.id}}" class="btn btn-danger btn-sm">删除</a>
+                                    </td>
+                                  </tr>
+                                {% endfor %}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+{% endblock %}

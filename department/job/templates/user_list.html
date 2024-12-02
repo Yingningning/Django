@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div>
+    <div class="container">
+        <div style="margin-bottom: 20px;">
+            <a class="btn btn-outline-success" href="/user_add" role="button" 
+            target="_blank">
+               
+                新建用户</a>
+        </div>
+
+        <div>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">姓名</th>
+                            <th scope="col">密码</th>
+                            <th scope="col">年龄</th>
+                            <th scope="col">账户余额</th>
+                            <th scope="col">入职时间</th>
+                            <th scope="col">性别</th>
+                            <th scope="col">部门</th>
+                            <th scope="col">操作</th>
+            
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in user_info %}
+                            <tr>
+                                <th scope="row">{{user.id}}</th>
+                                <td>{{user.name}}</td>
+                                <td>{{user.pwd}}</td>
+                                <td>{{user.age}}</td>
+                                <td>{{user.account}}</td>
+                                <td>{{user.create_time|date:"Y-m-d"}}</td>
+                                <td>{{user.get_gender_display}}</td>
+                                <td>{{user.depart.title}}</td>
+                                <td>
+                                    <a href="/user{{user.id}}_edit" class="btn btn-primary btn-sm" target="_blank">编辑</a>
+                                    <a href="/user{{user.id}}_del" class="btn btn-danger btn-sm">删除</a>
+                                </td>
+                              </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+
+{% endblock %}
