@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .对应class #对应id */
+        .c1{ 
+            color: aqua;
+        }
+        #c2{
+            color: rgb(19, 110, 190);
+        }
+        li{
+            color: pink;
+        }
+        input[type='text']{
+            border: 1px solid red;
+        }
+        .v1[xx='234']{
+            color: aqua;
+        }
+        .yy li{  /*子孙选择器 */
+            color: chartreuse;
+        }
+        .yy > a{  /*子选择器 */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">ab</div>  类选择器
+    <div id="c2">cd</div> id选择器
+    <div>ef</div>
+    <ul>
+        <li>北京</li> 标签选择器
+        <li>深圳</li>
+        <li>上海</li>
+    </ul>
+    <input type="text"> 属性选择器
+    <div class="v1" xx="123">Y</div>
+    <div class="v1" xx="234">N</div>
+    <div class="v1" xx="345">N</div>
+    <div class="yy">
+        <a>百度</a>
+        <div>
+            <a>谷歌</a>
+        </div>
+        <ul>
+            <li>美国</li>
+            <li>日本</li>
+            <li>韩国</li>
+        </ul>
+    </div>
+</body>
+</html>
