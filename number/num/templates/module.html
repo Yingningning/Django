@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css' %}">
+</head>
+<body>
+        {% block content %}
+        {% endblock %} 
+
+    <script>
+            $("#inputDate").datepicker({
+            language: 'zh-CN', //设置语言
+            autoclose: true, //选择后自动关闭
+            clearBtn: true,//清除按钮
+            format: "yyyy-mm-dd"//日期格式
+        });
+    </script>
+    <script src="{% static 'js/jquery-3.5.1/jquery-3.5.1.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datepicker-1.9.0/js/bootstrap-datepicker.js'  %}"></script>
+    <script src="{% static 'plugins/bootstrap-datepicker-1.9.0/locales/bootstrap-datepicker.zh-CN.min.js' %}"></script>
+</body>
+</html>

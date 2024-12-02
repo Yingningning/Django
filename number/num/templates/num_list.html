@@ -1,0 +1,101 @@
+{% extends 'module.html' %}
+
+{% block content %}
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">Navbar</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">部门管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">用户管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" method="get">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a class="btn btn-outline-success" href="/num_add" role="button" 
+                target="_blank">
+                    新建靓号</a>
+            </div>
+    
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">号码</th>
+                                <th scope="col">价格</th>
+                                <th scope="col">等级</th>
+                                <th scope="col">状态</th>
+                                <th scope="col">操作</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for num in nums %}
+                                <tr>
+                                    <th scope="row">{{num.id}}</th>
+                                    <td>{{num.mobile}}</td>
+                                    <td>{{num.price}}</td>
+                                    <td>{{num.get_level_display}}</td>
+                                    <td>{{num.get_status_display}}</td>
+                                    <td>
+                                        <a href="/num{{num.id}}_edit" class="btn btn-primary btn-sm" target="_blank">编辑</a>
+                                        <a href="/num{{num.id}}_del" class="btn btn-danger btn-sm">删除</a>
+                                    </td>
+                                  </tr>
+                            {% endfor %}
+                            </tbody>
+                          </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              {{page_str|safe}}
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+</div>
+{% endblock %}
