@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menus{
+            width: 200px;
+            height: 800px;
+            border: 1px solid red;
+        }
+        .menus .header{
+            background-color: aqua;
+            padding: 10px 5px;
+            cursor: pointer;
+        }
+        .menus .content a{
+            display: block;
+            padding: 5px 5px;
+            border-bottom: 1px dotted green;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menus">
+        <div class="item">
+            <div class="header" onclick="clickMe(this)">上海</div>
+            <div class="content hide">
+                <a>宝山区</a>
+                <a>黄浦区</a>
+                <a>浦东新区</a>
+                <a>普陀区</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header" onclick="clickMe(this)">上海</div>
+            <div class="content hide">
+                <a>宝山区</a>
+                <a>黄浦区</a>
+                <a>浦东新区</a>
+                <a>普陀区</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header" onclick="clickMe(this)">上海</div>
+            <div class="content hide">
+                <a>宝山区</a>
+                <a>黄浦区</a>
+                <a>浦东新区</a>
+                <a>普陀区</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="header" onclick="clickMe(this)">上海</div>
+            <div class="content hide">
+                <a>宝山区</a>
+                <a>黄浦区</a>
+                <a>浦东新区</a>
+                <a>普陀区</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        function clickMe(self){
+            var hashide = $(self).next().hasClass("hide");
+            if(hashide){
+                $(self).next().removeClass("hide")
+                $(self).parent().siblings().find(".content").addClass("hide")
+            }else{
+                $(self).next().addClass("hide")
+            }
+                    }
+    </script>
+</body>
+</html>

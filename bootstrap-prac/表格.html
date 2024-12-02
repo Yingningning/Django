@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>姓名</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>ynn</td>
+                <td>
+                    <input type="button" value="删除" class="delate">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ynn</td>
+                <td>
+                    <input type="button" value="删除" class="delate">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ynn</td>
+                <td>
+                    <input type="button" value="删除" class="delate">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ynn</td>
+                <td>
+                    <input type="button" value="删除" class="delate">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="static/js/jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        $(function(){
+            $(".delate").click(function() {
+                $(this).parent().parent().remove()
+            })
+        })
+    </script>
+</body>
+</html>

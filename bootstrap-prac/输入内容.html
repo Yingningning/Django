@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtUser" placeholder="用户名">
+    <input type="text" id="txtEmail" placeholder="邮箱">
+    <input type="button" value="提交" onclick="getinfo()">
+
+    <ul id="view">
+        
+    </ul>
+
+<script src="static/js/jquery-3.5.1/jquery-3.5.1.js"></script>
+<script>
+    function getinfo(){
+        var username = $("#txtUser").val()
+        var email = $("#txtEmail").val()
+
+        var newli = $("<li>").text(username);
+        $("#view").append(newli)
+
+    }
+</script>
+</body>
+</html>

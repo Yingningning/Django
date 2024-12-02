@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-prac/static/plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css" />
+    <style>
+        .container{
+            width: 400px; 
+            margin-top: 200px;
+            border: 1px solid rgb(218, 224, 226);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgb(111, 147, 177); /* 水平 垂直 模糊程度 颜色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1 style="text-align: center; font-size: 35px;">用户登录</h1>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+    <div style="margin-top: 20px;">
+        <input class="btn btn-primary" type="reset" value="log in">
+    </div>
+    </div>
+</body>
+</html>
